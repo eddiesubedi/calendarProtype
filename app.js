@@ -70,17 +70,17 @@ function fillInCalendar(calendarElem, rowClass, month, year){
 		var tds = $(element).find('> td');
 		tds.each(function(j, element){
 			if(i==0 && !(j>=firstDayOfMonth)){
-				$(element).append('<p style="color:#bcbcbc;margin:0;">'+prevnumOfDays+'</p>');
+				$(element).append('<div class="not-curr date">'+prevnumOfDays+'</div>');
 				prevnumOfDays = prevnumOfDays+1;
 			}
 			if(i==0 && j>=firstDayOfMonth){
-				$(element).append(day);
+				$(element).append('<div class="date">'+day+'</div>');
 				day=day+1;
 			}else if(day<=numOfDays && i>0){
-				$(element).append(day);
+				$(element).append('<div class="date">'+day+'</div>');
 				day=day+1;
 			}else if(i>0){
-				$(element).append('<p style="color:#bcbcbc;margin:0;">'+remaningDays+'</p>');
+				$(element).append('<div class="not-curr date">'+remaningDays+'</div>');
 				remaningDays = remaningDays+1;
 			}
 		});
@@ -99,7 +99,7 @@ $('.s').click(function(){
 		fillInCalendar($('.calendar')[0], '.week',month,year);
 	}
 });
-// generateCalnderSkeletion('.calendar');
-// var month = 9;
-// var year = 2018;
-// fillInCalendar($('.calendar')[0], '.week',month,year);
+generateCalnderSkeletion('.calendar');
+var month = 9;
+var year = 2018;
+fillInCalendar($('.calendar')[0], '.week',month,year);

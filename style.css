@@ -1,0 +1,32 @@
+.not-curr-date{
+	color:red;
+}
+.calendar table{
+	width: 100%;
+    border-collapse:collapse;
+    text-align: center;
+}
+.calendar{
+ 	margin: auto;
+    width: 50%;
+}
+.calendar td{
+	height: 40px;
+}
+.calendar td:nth-child(1){
+	/*background-color: green;*/
+}
+.calendar td:nth-child(2){
+	/*background-color: peru;*/
+}
+
+.week-label td{
+	background-color: #34495e;
+	border:1px solid #2c3e50;
+}
+.week-label p{
+	color: white
+}
+.week td{
+	border: 1px solid #7f8c8d;
+}
