@@ -16,7 +16,24 @@ body{
 		display: none;
 	}
 }
-
+.inactive{
+  display: none;
+}
+.active-btn{
+  background-color: #00ABFA !important;
+  border-color: #00ABFA !important;
+  color: white !important;
+}
+.cal-btn{
+  border:3px solid #E9ECF2;
+  padding:10px;
+  font-size: 25px;
+  margin-top: 25px;
+  display: inline-block;
+  background-color: #E9ECF2;
+  color:#2c3e50;
+  cursor: pointer;
+}
 .material-icons{
 	-webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -37,25 +54,28 @@ body{
 .control .material-icons{
 	display: inline-block;
 }
-.month-label{
-	float:left;
+.month-label, .year-label{
+  display: inline-block;
 }
-.year-label{
-	float: right;
+.month-controls{
+  float: left;
+}
+.calendar-btns{
+  float: right;
 }
 .not-curr{
 	color:#95a5a6;
 }
 .calendar-table{
 	width: 100%;
-    border-spacing: 0;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(44,62,80,0.19), 0 6px 6px rgba(42,62,80,0.23);
-    table-layout: fixed;
+  border-spacing: 0;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(44,62,80,0.19), 0 6px 6px rgba(42,62,80,0.23);
+  table-layout: fixed;
 }
 .calendar{
  	margin: auto;
-    width: 80%;
+  width: 88%;
 }
 .calendar td{
 	position: relative;

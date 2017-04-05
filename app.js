@@ -4,7 +4,7 @@ var calendar = (function(){
   var $mR
   var $yL
   var $yR
-  function generateCalnderSkeletion(selector){
+  function generateMonthCalendar(selector){
     $(selector).append(`
       <table class="calendar-table">
           <tbody>
@@ -12,6 +12,7 @@ var calendar = (function(){
                   <td>
                       <p class = "full-week">Sunday</p>
                       <p class = "abbr-week">SUN</p>
+
                   </td>
                   <td>
                       <p class = "full-week">Monday</p>
@@ -60,7 +61,72 @@ var calendar = (function(){
       </table>
     `)
   }
-  function fillInCalendar(calendarElem, rowClass, month, year){
+  function generateWeekCalendar(selector){
+    $(selector).append(`
+      <table class="calendar-table">
+        <tbody>
+            <tr class="week-label">
+                <td>
+                    <p class="full-week">Sunday</p>
+                    <p class="abbr-week">SUN</p>
+                </td>
+                <td>
+                    <p class="full-week">Monday</p>
+                    <p class="abbr-week">MON</p>
+                </td>
+                <td>
+                    <p class="full-week">Tuesday</p>
+                    <p class="abbr-week">TUE</p>
+                </td>
+                <td>
+                    <p class="full-week">Wednesday</p>
+                    <p class="abbr-week">WED</p>
+                </td>
+                <td>
+                    <p class="full-week">Thrusday</p>
+                    <p class="abbr-week">THU</p>
+                </td>
+                <td>
+                    <p class="full-week">Friday</p>
+                    <p class="abbr-week">FRI</p>
+                </td>
+                <td>
+                    <p class="full-week">Saturday</p>
+                    <p class="abbr-week">SAT</p>
+                </td>
+            </tr>
+            <tr class="week">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    `)
+  }
+
+  function generateDayCalendar(selector){
+    $(selector).append(`
+      <table class="calendar-table">
+        <tbody>
+            <tr class="week-label">
+                <td>
+                    <p class="day-label">Sunday</p>
+                </td>
+            </tr>
+            <tr class="week week-day">
+                <td></td>
+            </tr>
+        </tbody>
+      </table>
+    `)
+  }
+
+  function fillInMonthCalendar(calendarElem, rowClass, month, year){
     var trs = $(calendarElem).find('>table > tbody > '+rowClass)
     var date = new Date(month+'/01/'+year)
     var firstDayOfMonth = date.getDay()
@@ -99,33 +165,76 @@ var calendar = (function(){
   var currYear = currDate.getFullYear()
   var months = ['Janurary','February','March','April','May','June','July','August','September','October','November','December']
 
-  function setMonthYearLabel(){
+  function setMonthCalendar(){
+    $('.month-labels').removeClass('inactive')
     $monthTitle.text(months[currMonth])
     $yearTitle.text(currYear)
     $('.calendar-table').remove()
-    generateCalnderSkeletion($calendar)
-    fillInCalendar($calendar[0], '.week',currMonth+1,currYear)
+    generateMonthCalendar($calendar)
+    fillInMonthCalendar($calendar[0], '.week',currMonth+1,currYear)
   }
 
   function setClickFunctions(){
+    setMonthClickFunctions()
+    setControlsClickFunctions()
+  }
+  function removeAllLabels(){
+    $('.month-labels').addClass('inactive')
+  }
+  function setControlsClickFunctions(){
+    $('.cal-btn').click(function(){
+      $('.cal-btn').removeClass('active-btn')
+      $(this).addClass('active-btn')
+    })
+    $('.week-btn').click(function(){
+      setWeekCalendar()
+    })
+    $('.month-btn').click(function(){
+      setMonthCalendar()
+    })
+    $('.day-btn').click(function(){
+      setDayCalendar()
+    })
+  }
+  function setMonthClickFunctions(){
     $mL.click(function(){
-      decrementCurrMonth()
-      setMonthYearLabel()
+      if($('.month-btn').hasClass('active-btn')){
+        decrementCurrMonth()
+        setMonthCalendar()
+      }
     })
 
     $mR.click(function(){
-      incrementCurrMonth()
-      setMonthYearLabel()
+      if($('.month-btn').hasClass('active-btn')){
+        incrementCurrMonth()
+        setMonthCalendar()
+      }
     })
 
     $yL.click(function(){
-      currYear=currYear-1
-      setMonthYearLabel()
+      if($('.month-btn').hasClass('active-btn')){
+        currYear=currYear-1
+        setMonthCalendar()
+      }
     })
     $yR.click(function(){
-      currYear=currYear+1
-      setMonthYearLabel()
+      if($('.month-btn').hasClass('active-btn')){
+        currYear=currYear+1
+        setMonthCalendar()
+      }
     })
+  }
+  function setDayCalendar(){
+    removeAllLabels()
+    $('.calendar-table').remove()
+    generateDayCalendar($calendar)
+    $('.week td').css('height','500px')
+  }
+  function setWeekCalendar(){
+    removeAllLabels()
+    $('.calendar-table').remove()
+    generateWeekCalendar($calendar)
+    $('.week td').css('height','500px')
   }
 
   function incrementCurrMonth(){
@@ -152,8 +261,8 @@ var calendar = (function(){
       $('input[name="Month"]').val('')
       $('input[name="Year"]').val('')
     }else{
-      generateCalnderSkeletion($calendar)
-      fillInCalendar($calendar[0], '.week',month,year)
+      generateMonthCalendar($calendar)
+      fillInMonthCalendar($calendar[0], '.week',month,year)
     }
   })
 
@@ -166,7 +275,7 @@ var calendar = (function(){
     $yL = $(selector.yL)
     $yR = $(selector.yR)
     setClickFunctions()
-    setMonthYearLabel()
+    setMonthCalendar()
   }
   return{init:init}
 })()

@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Calnder Demo</title>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calnder Demo</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 </body>
-	<div class="calendar">
-		<div class="controls">
-			<div class="month-label">
-				<i class="material-icons mL">keyboard_arrow_left</i>
-				<h1 class="month-title"></h1>
-				<i class="material-icons mR">keyboard_arrow_right</i>
-			</div>
-			<div class="year-label">
-				<i class="material-icons yL">keyboard_arrow_left</i>
-				<h1 class="year-title"></h1>
-				<i class="material-icons yR">keyboard_arrow_right</i>
-			</div>
-		</div>
+<div class="calendar">
+    <div class="controls">
+        <div class="month-controls">
+            <div class="month-labels">
+                <div class="month-label">
+                    <i class="material-icons mL">keyboard_arrow_left</i>
+                    <h1 class="month-title"></h1>
+                    <i class="material-icons mR">keyboard_arrow_right</i>
+                </div>
+                <div class="year-label">
+                    <i class="material-icons yL">keyboard_arrow_left</i>
+                    <h1 class="year-title"></h1>
+                    <i class="material-icons yR">keyboard_arrow_right</i>
+                </div>
+            </div>
+        </div>
+        <div class="calendar-btns">
+            <div class="cal-btn day-btn">Day</div>
+            <div class="cal-btn week-btn">Week</div>
+            <div class="cal-btn month-btn active-btn">Month</div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
 
-	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-	<script type="text/javascript" src="app.js"></script>
 </html>
