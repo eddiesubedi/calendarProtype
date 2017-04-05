@@ -105,6 +105,7 @@ function setMonthYearLabel(){
 	$('.calendar-table').remove();
 	generateCalnderSkeletion('.calendar');
 	fillInCalendar($('.calendar')[0], '.week',currMonth+1,currYear);
+	addEvents();
 }
 $('.month-label :nth-child(1)').click(function(){
 	decrementCurrMonth();
@@ -150,3 +151,26 @@ $('.s').click(function(){
 		fillInCalendar($('.calendar')[0], '.week',month,year);
 	}
 });
+
+function addEvents(){
+	var div = '<div class="event blue">Mindfulness Meditation Support Group</div>';
+	$('.calendar :nth-child(4) td:nth-child(3)').prepend(div);
+
+	div = '<div class="event pink">Mindful Yoga with Sandi</div>';
+	$('.calendar :nth-child(6) td:nth-child(2)').prepend(div);
+
+	div = '<div class="event purp">Just Plain Sitting</div>';
+	$(':nth-child(5) td:nth-child(6)').prepend(div);
+
+	div = '<div class="event purp">Walking Meditation</div>';
+	$('.week:nth-child(2) td:nth-child(1)').prepend(div);
+
+	div = '<div class="event pink">Mindfulness Meditation for Everybody</div>';
+	$(':nth-child(6) td:nth-child(4)').prepend(div);
+
+	div = '<div class="event blue">Mid-Day Mindfulness</div>';
+	$(':nth-child(3) td:nth-child(5)').prepend(div);
+
+	div = '<div class="event blue">Lama Yeshe Jinpa: Teachings on the Lotus Sutra</div>';
+	$(':nth-child(4) td:nth-child(7)').prepend(div);
+}
