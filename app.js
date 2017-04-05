@@ -4,25 +4,32 @@ function generateCalnderSkeletion(selector){
 		    <tbody>
 		        <tr class="week-label">
 		            <td>
-		                <p>Sunday</p>
+		                <p class = "full-week">Sunday</p>
+		                <p class = "abbr-week">SUN</p>
 		            </td>
 		            <td>
-		                <p>Monday</p>
+		                <p class = "full-week">Monday</p>
+		                <p class = "abbr-week">MON</p>
 		            </td>
 		            <td>
-		                <p>Tuesday</p>
+		                <p class = "full-week">Tuesday</p>
+		                <p class = "abbr-week">TUE</p>
 		            </td>
 		            <td>
-		                <p>Wednesday</p>
+		                <p class = "full-week">Wednesday</p>
+		                <p class = "abbr-week">WED</p>
 		            </td>
 		            <td>
-		                <p>Thrusday</p>
+		                <p class = "full-week">Thrusday</p>
+		                <p class = "abbr-week">THU</p>
 		            </td>
 		            <td>
-		                <p>Friday</p>
+		                <p class = "full-week">Friday</p>
+		                <p class = "abbr-week">FRI</p>
 		            </td>
 		            <td>
-		                <p>Saturday</p>
+		                <p class = "full-week">Saturday</p>
+		                <p class = "abbr-week">SAT</p>
 		            </td>
 		        </tr>
 		        <tr class="week">
@@ -86,6 +93,50 @@ function fillInCalendar(calendarElem, rowClass, month, year){
 		});
 	});
 }
+var currDate = new Date();
+var currMonth = currDate.getMonth();
+var currYear = currDate.getFullYear();
+var months = ["Janurary","February","March","April","May","June","July","August","September","October","November","December"]
+
+setMonthYearLabel();
+function setMonthYearLabel(){
+	$('.month-label h1').text(months[currMonth]);
+	$('.year-label h1').text(currYear);
+	$('.calendar-table').remove();
+	generateCalnderSkeletion('.calendar');
+	fillInCalendar($('.calendar')[0], '.week',currMonth+1,currYear);
+}
+$('.month-label :nth-child(1)').click(function(){
+	decrementCurrMonth();
+	setMonthYearLabel();
+});
+$('.month-label :nth-child(3)').click(function(){
+	incrementCurrMonth();
+	setMonthYearLabel();
+});
+$('.year-label :nth-child(1)').click(function(){
+	currYear=currYear-1;
+	setMonthYearLabel();
+});
+$('.year-label :nth-child(3)').click(function(){
+	currYear=currYear+1;
+	setMonthYearLabel();
+});
+function incrementCurrMonth(){
+	if(currMonth==11){
+		currMonth = 0;
+	}else{
+		currMonth = currMonth+1;
+	}
+}
+function decrementCurrMonth(){
+	if(currMonth==0){
+		currMonth = 11;
+	}else{
+		currMonth = currMonth-1;
+	}
+}
+
 $('.s').click(function(){
 	var month = $("input[name='Month']").val();
 	var year = $("input[name='Year']").val();
@@ -99,7 +150,3 @@ $('.s').click(function(){
 		fillInCalendar($('.calendar')[0], '.week',month,year);
 	}
 });
-generateCalnderSkeletion('.calendar');
-var month = 9;
-var year = 2018;
-fillInCalendar($('.calendar')[0], '.week',month,year);

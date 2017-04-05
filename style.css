@@ -1,32 +1,87 @@
-.not-curr-date{
-	color:red;
+ @import url('https://fonts.googleapis.com/css?family=Roboto');
+ *{
+    font-family: 'Roboto', sans-serif;
 }
-.calendar table{
+body{
+	background-color: #bdc3c7;
+}
+
+@media (max-width:800px) {
+	.full-week{
+		display: none;
+	}
+}
+@media (min-width:800px) {
+	.abbr-week{
+		display: none;
+	}
+}
+
+.material-icons{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.controls h1{
+	display: inline-block;
+	color: #2c3e50;
+}
+.controls .material-icons{
+	cursor: pointer;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.control .material-icons{
+	display: inline-block;
+}
+.month-label{
+	float:left;
+}
+.year-label{
+	float: right;
+}
+.not-curr{
+	color:#95a5a6;
+}
+.calendar-table{
 	width: 100%;
-    border-collapse:collapse;
+    border-spacing: 0;
     text-align: center;
+    box-shadow: 0 10px 20px rgba(44,62,80,0.19), 0 6px 6px rgba(42,62,80,0.23);
+    table-layout: fixed;
 }
 .calendar{
  	margin: auto;
-    width: 50%;
+    width: 80%;
 }
 .calendar td{
-	height: 40px;
+	position: relative;
+	height: 90px;
 }
-.calendar td:nth-child(1){
-	/*background-color: green;*/
+.calendar td:after {
+  content: '';
+  display: block;
+  margin-top: 1%;
 }
-.calendar td:nth-child(2){
-	/*background-color: peru;*/
-}
-
 .week-label td{
-	background-color: #34495e;
-	border:1px solid #2c3e50;
+	background-color: #E9ECF2;
+}
+.date{
+	vertical-align: bottom;
 }
 .week-label p{
-	color: white
+	color: #8B929E;
 }
 .week td{
-	border: 1px solid #7f8c8d;
+	border: 1px solid #E8E8E8;
+	background-color: white;
+	vertical-align:bottom;
+	padding-bottom:10px;
+	color: #34495e;
+}
+.calendar :nth-child(7) td{
+	padding-bottom: 20px;
 }
