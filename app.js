@@ -1,5 +1,9 @@
 var calendar = (function(){
-  var $calendar
+  var $calendar, $monthTitle, $yearTitle
+  var $mL
+  var $mR
+  var $yL
+  var $yR
   function generateCalnderSkeletion(selector){
     $(selector).append(`
       <table class="calendar-table">
@@ -96,29 +100,33 @@ var calendar = (function(){
   var months = ['Janurary','February','March','April','May','June','July','August','September','October','November','December']
 
   function setMonthYearLabel(){
-    $('.month-label h1').text(months[currMonth])
-    $('.year-label h1').text(currYear)
+    $monthTitle.text(months[currMonth])
+    $yearTitle.text(currYear)
     $('.calendar-table').remove()
     generateCalnderSkeletion($calendar)
     fillInCalendar($calendar[0], '.week',currMonth+1,currYear)
   }
 
-  $('.month-label :nth-child(1)').click(function(){
-    decrementCurrMonth()
-    setMonthYearLabel()
-  })
-  $('.month-label :nth-child(3)').click(function(){
-    incrementCurrMonth()
-    setMonthYearLabel()
-  })
-  $('.year-label :nth-child(1)').click(function(){
-    currYear=currYear-1
-    setMonthYearLabel()
-  })
-  $('.year-label :nth-child(3)').click(function(){
-    currYear=currYear+1
-    setMonthYearLabel()
-  })
+  function setClickFunctions(){
+    $mL.click(function(){
+      decrementCurrMonth()
+      setMonthYearLabel()
+    })
+
+    $mR.click(function(){
+      incrementCurrMonth()
+      setMonthYearLabel()
+    })
+
+    $yL.click(function(){
+      currYear=currYear-1
+      setMonthYearLabel()
+    })
+    $yR.click(function(){
+      currYear=currYear+1
+      setMonthYearLabel()
+    })
+  }
 
   function incrementCurrMonth(){
     if(currMonth==11){
@@ -151,6 +159,13 @@ var calendar = (function(){
 
   function init(selector){
     $calendar = $(selector.calendar)
+    $monthTitle =  $(selector.monthTitle)
+    $yearTitle = $(selector.yearTitle)
+    $mL = $(selector.mL)
+    $mR = $(selector.mR)
+    $yL = $(selector.yL)
+    $yR = $(selector.yR)
+    setClickFunctions()
     setMonthYearLabel()
   }
   return{init:init}
@@ -160,5 +175,11 @@ var calendar = (function(){
 $(document).ready(function(){
   calendar.init({
     calendar: '.calendar',
+    monthTitle: '.month-title',
+    yearTitle: '.year-title',
+    mL: '.mL',
+    yL: '.yL',
+    mR: '.mR',
+    yR: '.yR'
   })
 })
