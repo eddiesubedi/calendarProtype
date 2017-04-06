@@ -419,9 +419,9 @@ function addData(){
     $(':nth-child(7) td:nth-child(7)').append('<p class="event blue">Mindfulness Meditation for Everybody</p>')
     $(':nth-child(7) td:nth-child(7)').append('<p class="event red">Medicine Buddha Practice</p>')
 
-    $('.event').wrap('<div class="tooltip"></div>')
+    // $('.event').wrap('<div class="tooltip"></div>')
 
-    $('.event').each(function(){
-      $(this).prepend('<span class="tooltiptext">'+$($(this)[0]).text()+'</span>');
-    })
+    // $('.event').each(function(){
+    //   $(this).prepend('<span class="tooltiptext">'+$($(this)[0]).text()+'</span>');
+    // })
   }
