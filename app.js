@@ -10,32 +10,32 @@ var calendar = (function(){
           <tbody>
               <tr class="week-label">
                   <td>
-                      <p class = "full-week">Sunday</p>
+                      <p class = "full-week">SUNDAY</p>
                       <p class = "abbr-week">SUN</p>
 
                   </td>
                   <td>
-                      <p class = "full-week">Monday</p>
+                      <p class = "full-week">MONDAY</p>
                       <p class = "abbr-week">MON</p>
                   </td>
                   <td>
-                      <p class = "full-week">Tuesday</p>
+                      <p class = "full-week">TUESDAY</p>
                       <p class = "abbr-week">TUE</p>
                   </td>
                   <td>
-                      <p class = "full-week">Wednesday</p>
+                      <p class = "full-week">WEDNESDAY</p>
                       <p class = "abbr-week">WED</p>
                   </td>
                   <td>
-                      <p class = "full-week">Thrusday</p>
+                      <p class = "full-week">THRUSDAY</p>
                       <p class = "abbr-week">THU</p>
                   </td>
                   <td>
-                      <p class = "full-week">Friday</p>
+                      <p class = "full-week">FRIDAY</p>
                       <p class = "abbr-week">FRI</p>
                   </td>
                   <td>
-                      <p class = "full-week">Saturday</p>
+                      <p class = "full-week">SATURDAY</p>
                       <p class = "abbr-week">SAT</p>
                   </td>
               </tr>
@@ -172,6 +172,7 @@ var calendar = (function(){
     $('.calendar-table').remove()
     generateMonthCalendar($calendar)
     fillInMonthCalendar($calendar[0], '.week',currMonth+1,currYear)
+    addData()
   }
 
   function setClickFunctions(){
@@ -292,3 +293,135 @@ $(document).ready(function(){
     yR: '.yR'
   })
 })
+
+
+
+
+
+function addData(){
+    $('.week:nth-child(2) td:nth-child(1)').append('<p class="event blue">Mindful Recovery</p>')
+    $('.week:nth-child(2) td:nth-child(1)').append('<p class="event red">Walking Meditation</p>')
+    $('.week:nth-child(2) td:nth-child(1)').append('<p class="event yellow">Sunday Service: '+'“'+'The Watcher and the Stories We Tell Ourselves: How to See the Mustard Seed”</p>')
+
+    $('.week:nth-child(2) td:nth-child(2)').append('<p class="event red">Lama Yeshe Jinpa: Teachings on the Lotus Sutra</p>')
+    // $('').append('<p class="event red"></p>')
+    $('.week:nth-child(2) td:nth-child(3)').append('<p class="event yellow">Mindful Yoga with Sandi</p>')
+    $('.week:nth-child(2) td:nth-child(3)').append('<p class="event blue">Mindfulness Meditation Support Group</p>')
+
+    $('.week:nth-child(2) td:nth-child(4)').append('<p class="event red">Just Plain Sitting</p>')
+    $('.week:nth-child(2) td:nth-child(4)').append('<p class="event red">Mid-Day Mindfulness</p>')
+    $('.week:nth-child(2) td:nth-child(4)').append('<p class="event blue">Beginning Meditation</p>')
+
+    $('.week:nth-child(2) td:nth-child(5)').append('<p class="event red">Mindful Yoga with Sandi</p>')
+    $('.week:nth-child(2) td:nth-child(5)').append('<p class="event blue">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $('.week:nth-child(2) td:nth-child(5)').append('<p class="event yellow">Mindful Yoga with Sandi</p>')
+
+    $('.week:nth-child(2) td:nth-child(7)').append('<p class="event blue">Mindfulness Meditation for Everybody</p>')
+    $('.week:nth-child(2) td:nth-child(7)').append('<p class="event red">Medicine Buddha Practice</p>')
+
+    $(':nth-child(3) td:nth-child(1)').append('<p class="event blue">Mindful Recovery</p>')
+    $(':nth-child(3) td:nth-child(1)').append('<p class="event red">Walking Meditation</p>')
+    $(':nth-child(3) td:nth-child(1)').append('<p class="event yellow">Sunday Service: Boddhisattva’s path</p>')
+    $(':nth-child(3) td:nth-child(1)').append('<p class="event red">Buddhism from the Ground Up</p>')
+
+    $(':nth-child(3) td:nth-child(2)').append('<p class="event yellow">Just Plain Sitting</p>')
+
+    $(':nth-child(3) td:nth-child(3)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(3) td:nth-child(3)').append('<p class="event yellow">Mindfulness Meditation Support Group</p>')
+
+    $(':nth-child(3) td:nth-child(4)').append('<p class="event blue">Just Plain Sitting</p>')
+    $(':nth-child(3) td:nth-child(4)').append('<p class="event red">Mid-Day Mindfulness</p>')
+    $(':nth-child(3) td:nth-child(4)').append('<p class="event blue">Beginning Meditation</p>')
+
+    $(':nth-child(3) td:nth-child(5)').append('<p class="event red">Mindful Yoga with Sandi</p>')
+    $(':nth-child(3) td:nth-child(5)').append('<p class="event blue">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $(':nth-child(3) td:nth-child(5)').append('<p class="event red">Mindful Yoga with Sandi</p>')
+
+    $(':nth-child(3) td:nth-child(7)').append('<p class="event yellow">Mindfulness Meditation for Everybody</p>')
+
+    $(':nth-child(4) td:nth-child(1)').append('<p class="event blue">Mindful Recovery</p>')
+    $(':nth-child(4) td:nth-child(1)').append('<p class="event red">Walking Meditation</p>')
+    $(':nth-child(4) td:nth-child(1)').append('<p class="event red">Sunday Service: Boddhisattva’s path</p>')
+
+    $(':nth-child(4) td:nth-child(2)').append('<p class="event yellow">Lama Yeshe Jinpa: Teachings on the Lotus Sutra</p>')
+
+    $(':nth-child(4) td:nth-child(3)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(4) td:nth-child(3)').append('<p class="event yellow">Mindfulness Meditation Support Group</p>')
+
+    $(':nth-child(4) td:nth-child(4)').append('<p class="event blue">Just Plain Sitting</p>')
+    $(':nth-child(4) td:nth-child(4)').append('<p class="event red">Mid-Day Mindfulness</p>')
+    $(':nth-child(4) td:nth-child(4)').append('<p class="event yellow">Beginning Meditation</p>')
+
+    $(':nth-child(4) td:nth-child(5)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(4) td:nth-child(5)').append('<p class="event red">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $(':nth-child(4) td:nth-child(5)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+
+    $(':nth-child(4) td:nth-child(7)').append('<p class="event red">Mindfulness Meditation for Everybody</p>')
+    $(':nth-child(4) td:nth-child(7)').append('<p class="event red">Journey to Awaken Kirtan Experience</p>')
+
+    $(':nth-child(5) td:nth-child(1)').append('<p class="event blue">Mindful Recovery </p>')
+    $(':nth-child(5) td:nth-child(1)').append('<p class="event red">Walking Meditation </p>')
+    $(':nth-child(5) td:nth-child(1)').append('<p class="event yellow">Sunday Service: Boddhisattvas path </p>')
+    $(':nth-child(5) td:nth-child(1)').append('<p class="event red">Buddhism from the Ground Up </p>')
+    $(':nth-child(5) td:nth-child(2)').append('<p class="event blue">Just Plain Sitting</p>')
+
+    $(':nth-child(5) td:nth-child(3)').append('<p class="event red">Mindful Yoga with Sandi</p>')
+    $(':nth-child(5) td:nth-child(3)').append('<p class="event red">Mindfulness Meditation Support Group</p>')
+
+    $(':nth-child(5) td:nth-child(4)').append('<p class="event yellow">Just Plain Sitting</p>')
+    $(':nth-child(5) td:nth-child(4)').append('<p class="event red">Mid-Day Mindfulness</p>')
+    $(':nth-child(5) td:nth-child(4)').append('<p class="event yellow">Beginning Meditation</p>')
+
+    $(':nth-child(5) td:nth-child(5)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(5) td:nth-child(5)').append('<p class="event blue">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $(':nth-child(5) td:nth-child(5)').append('<p class="event red">Mindful Yoga with Sandi</p>')
+
+    $(':nth-child(5) td:nth-child(7)').append('<p class="event yellow">Becoming Buddha – Monthly Meditation Workshop</p>')
+    $(':nth-child(5) td:nth-child(7)').append('<p class="event red">Mindfulness Meditation for Everybody</p>')
+    $(':nth-child(5) td:nth-child(7)').append('<p class="event yellow">Vajrasattva Practice</p>')
+
+    $(':nth-child(6) td:nth-child(1)').append('<p class="event blue">Mindful Recovery</p>')
+    $(':nth-child(6) td:nth-child(1)').append('<p class="event blue">Walking Meditation</p>')
+    $(':nth-child(6) td:nth-child(1)').append('<p class="event red">Sunday Service: Boddhisattva’s path</p>')
+
+    $(':nth-child(6) td:nth-child(2)').append('<p class="event yellow">Lama Yeshe Jinpa: Teachings on the Lotus Sutra</p>')
+
+    $(':nth-child(6) td:nth-child(3)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(6) td:nth-child(3)').append('<p class="event red">Mindfulness Meditation Support Group</p>')
+
+    $(':nth-child(6) td:nth-child(4)').append('<p class="event yellow">Just Plain Sitting</p>')
+    $(':nth-child(6) td:nth-child(4)').append('<p class="event red">Mid-Day Mindfulness</p>')
+    $(':nth-child(6) td:nth-child(4)').append('<p class="event yellow">Beginning Meditation</p>')
+
+    $(':nth-child(6) td:nth-child(5)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(6) td:nth-child(5)').append('<p class="event yellow">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $(':nth-child(6) td:nth-child(5)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+
+    $(':nth-child(6) td:nth-child(7)').append('<p class="event red">Mindfulness Meditation for Everybody</p>')
+
+    $(':nth-child(7) td:nth-child(1)').append('<p class="event yellow">Mindful Recovery</p>')
+    $(':nth-child(7) td:nth-child(1)').append('<p class="event red">Walking Meditation</p>')
+    $(':nth-child(7) td:nth-child(1)').append('<p class="event yellow">Sunday Service: Boddhisattva’s path</p>')
+
+    $(':nth-child(7) td:nth-child(2)').append('<p class="event red">Just Plain Sitting</p>')
+
+    $(':nth-child(7) td:nth-child(3)').append('<p class="event blue">Mindful Yoga with Sandi</p>')
+    $(':nth-child(7) td:nth-child(3)').append('<p class="event blue">Mindfulness Meditation Support Group</p>')
+
+    $(':nth-child(7) td:nth-child(4)').append('<p class="event yellow">Just Plain Sitting</p>')
+    $(':nth-child(7) td:nth-child(4)').append('<p class="event blue">Mid-Day Mindfulness</p>')
+    $(':nth-child(7) td:nth-child(4)').append('<p class="event red">Beginning Meditation</p>')
+
+    $(':nth-child(7) td:nth-child(5)').append('<p class="event yellow">Mindful Yoga with Sandi</p>')
+    $(':nth-child(7) td:nth-child(5)').append('<p class="event red">Introduction to Bagua Circle Walking Nei Gong</p>')
+    $(':nth-child(7) td:nth-child(5)').append('<p class="event yellow">Mindful Yoga with Sandi</p>')
+
+    $(':nth-child(7) td:nth-child(7)').append('<p class="event blue">Mindfulness Meditation for Everybody</p>')
+    $(':nth-child(7) td:nth-child(7)').append('<p class="event red">Medicine Buddha Practice</p>')
+
+    $('.event').wrap('<div class="tooltip"></div>')
+
+    $('.event').each(function(){
+      $(this).prepend('<span class="tooltiptext">'+$($(this)[0]).text()+'</span>');
+    })
+  }
