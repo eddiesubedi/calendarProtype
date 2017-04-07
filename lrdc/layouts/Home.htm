@@ -1,0 +1,18 @@
+description = "Layout of homepage"
+==
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lion's Roar Dharma Center</title>
+	<meta charset="UTF-8">
+	<link href="{{ 'assets/css/homepage/home.css'|theme }}" rel="stylesheet">
+	{% styles %}
+</head>
+<body>
+	<section class="body">
+	{% page %}
+	</section>
+	<script src="{{ 'assets/js/vendor/jquery-3.2.0_min.js'|theme }}"></script>
+	{% scripts %}
+</body>
+</html>

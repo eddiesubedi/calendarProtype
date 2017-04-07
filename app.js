@@ -183,9 +183,9 @@ var calendar = (function(){
     $('.month-labels').addClass('inactive')
   }
   function setControlsClickFunctions(){
-    $('.cal-btn').click(function(){
+    $('.cal-btn').click(function(e){
       $('.cal-btn').removeClass('active-btn')
-      $(this).addClass('active-btn')
+      $(e.target).addClass('active-btn')
     })
     $('.week-btn').click(function(){
       setWeekCalendar()
@@ -299,6 +299,7 @@ $(document).ready(function(){
 
 
 function addData(){
+
     $('.week:nth-child(2) td:nth-child(1)').append('<p class="event blue">Mindful Recovery</p>')
     $('.week:nth-child(2) td:nth-child(1)').append('<p class="event red">Walking Meditation</p>')
     $('.week:nth-child(2) td:nth-child(1)').append('<p class="event yellow">Sunday Service: '+'“'+'The Watcher and the Stories We Tell Ourselves: How to See the Mustard Seed”</p>')
@@ -418,10 +419,4 @@ function addData(){
 
     $(':nth-child(7) td:nth-child(7)').append('<p class="event blue">Mindfulness Meditation for Everybody</p>')
     $(':nth-child(7) td:nth-child(7)').append('<p class="event red">Medicine Buddha Practice</p>')
-
-    // $('.event').wrap('<div class="tooltip"></div>')
-
-    // $('.event').each(function(){
-    //   $(this).prepend('<span class="tooltiptext">'+$($(this)[0]).text()+'</span>');
-    // })
   }

@@ -8,7 +8,7 @@ body{
 	background-color: #f6f7fb;
 }
 p{
-  margin: 10px;
+  margin-bottom: 10px;
 }
 @media (max-width:800px) {
 	.full-week{
@@ -18,8 +18,15 @@ p{
     overflow: hidden; 
     white-space: nowrap;
     color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     border:2px solid #FA6900 !important; 
     border-radius: 2em;
+    cursor: pointer;
   }
 }
 @media (min-width:800px) {
@@ -160,41 +167,6 @@ p{
   color: #88C425;
 }
 
-.not-curr ~ div{
+.not-curr ~ p{
   opacity: .5;
-}
-
-.pop-up{
-  width: 10%;
-  height: 10vh;
-  background-color: white;
-  text-align: center;
-  border-radius: 1%;
-  box-shadow: 0 10px 20px rgba(44,62,80,0.19), 0 6px 6px rgba(42,62,80,0.23);
-  position: absolute;
-  top: 0;
-  z-index: 999;
-}
-.pop-up p{
-  font-family: 'Roboto', serif;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    background-color: white;
-    color: black;
-    border: 2px solid #676d8d
-    text-align: center;
-    padding: 50px;
-    overflow: hidden;
-    border-radius: 1px;
-    position: absolute;
-    z-index: 99999;
-    font-family: 'Roboto', serif;
-    opacity: 1 !important;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    /*visibility: visible;*/
 }

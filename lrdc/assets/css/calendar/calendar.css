@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400');
+.c-body .controls {
+    position: relative;
+    padding-left: 90px;
+    padding-bottom: 20px;
+    background: #F5FAFB;
+    background: -webkit-linear-gradient(120deg, #F5FAFB, #F7FAFB);
+    background: -o-linear-gradient(120deg, #F5FAFB, #F7FAFB);
+    background: -moz-linear-gradient(120deg, #F5FAFB, #F7FAFB);
+    background: linear-gradient(120deg, #F5FAFB, #F7FAFB);
+}
+
+.c-body .curr-date {
+    font-size: 94px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    color: #476370
+}
+
+.c-body .curr-month-year {
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #476370
+}
+
+.c-body .left {
+    display: inline-block;
+}
+
+.c-body .right {
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: #476370;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+
+.c-body .today {
+    display: inline-block;
+}
+
+.c-body .buttons {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.c-body .buttons a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.c-body {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 19px 38px rgba(212, 218, 218, .5), 0 15px 12px rgba(212, 218, 218, .5);
+    border-radius: 25px;
+}
+.c-body table{
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+}
+.controls {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.c-body table {
+    width: 100%;
+    height: 100vh;
+    border-spacing: 0;
+    table-layout: fixed;
+    background: #F5FAFB;
+    background: -webkit-linear-gradient(120deg, #F5FAFB, #FDFDFC);
+    background: -o-linear-gradient(120deg, #F5FAFB, #FDFDFC);
+    background: -moz-linear-gradient(120deg, #F5FAFB, #FDFDFC);
+    background: linear-gradient(120deg, #F5FAFB, #FDFDFC);
+}
+
+.c-body th {
+    font-size: 18px;
+    letter-spacing: 1px;
+    background-color: #F1F5F6;
+    color: #B2BEC3;
+    border: 1px solid #EFF3F4;
+}
+
+.c-body td {
+    text-align: right;
+    vertical-align: top;
+    color: #83959D;
+    padding-top: 5px;
+    border: 1px solid #EEF2F3;
+}
+
+.c-body td:nth-child(7) {
+    padding-right: 10px;
+}
+
+.c-prev-month,
+.c-next-month {
+    color: #DBDFE1 !important;
+}
+
+.c-body .todays-date {
+    background: #DFF1F1;
+    background: -webkit-linear-gradient(-120deg, #DFF1F1, #F9FCFC);
+    background: -o-linear-gradient(-120deg, #DFF1F1, #F9FCFC);
+    background: -moz-linear-gradient(-120deg, #DFF1F1, #F9FCFC);
+    background: linear-gradient(-120deg, #DFF1F1, #F9FCFC);
+}

@@ -1,0 +1,90 @@
+description = "Calendar for events" 
+==
+<div class="c-body">
+    <div class="controls">
+        <div class="today">
+            <div class="left">
+                <div class="curr-date">26</div>
+            </div>
+            <div class="right">
+                <div class="abbr">th</div>
+                <div class="curr-day">Thursday</div>
+            </div>
+            <div class="curr-month-year">Feburary 2017</div>
+        </div>
+        <div class="buttons">	
+        <!-- 	<a href="">Day</a>
+        	<a href="">Week</a>
+			<a href="">Month</a> -->
+        </div>
+    </div>
+    <table>
+        <tr>
+            <th>SUNDAY</th>
+            <th>MONDAY</th>
+            <th>TUESDAY</th>
+            <th>WEDNESDAY</th>
+            <th>THURSDAY</th>
+            <th>FRIDAY</th>
+            <th>SATURDAY</th>
+        </tr>
+        <tr>
+            <td class="c-prev-month">28</td>
+            <td class="c-prev-month">29</td>
+            <td class="c-prev-month">30</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td class="todays-date">26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td class="c-next-month">1</td>
+        </tr>
+        <tr>
+            <td class="c-next-month">2</td>
+            <td class="c-next-month">3</td>
+            <td class="c-next-month">4</td>
+            <td class="c-next-month">5</td>
+            <td class="c-next-month">6</td>
+            <td class="c-next-month">7</td>
+            <td class="c-next-month">8</td>
+        </tr>
+    </table>
+</div>
+{% put styles %}
+<link href="{{ 'assets/css/calendar/calendar.css'|theme }}" rel="stylesheet"> {% endput %} {% put scripts %}
+<script src="{{ 'assets/js/calendar/calendar.js'|theme }}"></script>
+{% endput %}
